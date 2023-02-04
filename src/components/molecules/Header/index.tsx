@@ -1,10 +1,8 @@
 import { Box } from "@mui/system";
 import React, { useState } from "react";
 import { MuiDropDown } from "../../atoms/DropDown";
-// import { MuiInputField } from "../../atoms/SearchField";
+import { MuiInputField } from "../../atoms/SearchField";
 import { MuiTabs } from "../../atoms/Tab";
-import { TextField, InputAdornment, Button } from "@mui/material";
-import MuiIcon from "../../atoms/Icon";
 import { inputData } from "../../../imputData";
 interface inputType {
   firstField: {
@@ -45,22 +43,7 @@ export const HeaderComponent: React.FC<UseStateProps> = ({ props }) => {
           gap: "8px",
         }}
       >
-        {/* <MuiInputField /> */}
-        <TextField
-          onChange={handleSearch}
-          label="search all assets"
-          size="small"
-          sx={{ width: "230px", height: 40 }}
-          InputProps={{
-            endAdornment: (
-              <InputAdornment position="end">
-                <Button>
-                  <MuiIcon sx={{ width: 20, height: 20 }} icon="search" />
-                </Button>
-              </InputAdornment>
-            ),
-          }}
-        />
+        <MuiInputField onChange={handleSearch} />
         <MuiDropDown sx={{ width: 78, height: 40 }} content="time" />
         <MuiDropDown sx={{ width: 122, heigth: 40 }} content="All assets" />
       </Box>
